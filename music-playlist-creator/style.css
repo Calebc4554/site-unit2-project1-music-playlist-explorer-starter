@@ -8,23 +8,33 @@ body {
 header {
 background-color: lightgray;
 padding: 10px;
-font-size: 12px;
+font-size: 15px;
 size: 10px;
 }
 
-footer {
-
-}
-
 .playlist-cards {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    justify-content: space-around;
     align-items: center;
-    text-wrap: wrap;
+    grid-template-columns: repeat(4,1fr);
+    gap: 25px;
+    padding: 50px 85px 50px;
+
 }
+
 
 .playlist-img {
-    height: 250px;
-    width: 250px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
+.playlist {
+    margin-top: 25px;
+    border: solid black;
+    align-self: center;
+}
+
+.lower-playlist {
+    align-self: center;
+}
