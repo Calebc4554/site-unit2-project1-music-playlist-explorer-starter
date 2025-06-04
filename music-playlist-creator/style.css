@@ -4,3 +4,27 @@ body {
     padding: 0;
     background-color: #f8f8f8;
 }
+
+header {
+background-color: lightgray;
+padding: 10px;
+font-size: 12px;
+size: 10px;
+}
+
+footer {
+
+}
+
+.playlist-cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-wrap: wrap;
+}
+
+.playlist-img {
+    height: 250px;
+    width: 250px;
+}
+
