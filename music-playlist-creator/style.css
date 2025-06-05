@@ -116,7 +116,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     border: solid black;
-    margin: 5px;
+    margin: 6px;
 }
 
 .song-info {
