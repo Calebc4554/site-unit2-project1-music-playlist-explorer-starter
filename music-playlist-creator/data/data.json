@@ -1,0 +1,99 @@
+{
+    "playlists": [
+    {
+        "playlistID": "001",
+        "playlist_name": "Chill Vibes",
+        "playlist_author": "Caleb Calderon",
+        "playlist_art": "assets/img/playlist.png",
+        "playlist_likes": "5",
+        "songs": [
+        {
+            "title": "Late Night",
+            "artist": "ODESZA",
+            "album": "A Moment Apart"
+        },
+        {
+            "title": "Sunset Lover",
+            "artist": "Petit Biscuit",
+            "album": "Presence"
+        }
+        ]
+    },
+    {
+        "playlistID": "002",
+        "playlist_name": "Workout Boost",
+        "playlist_author": "Caleb Calderon",
+        "playlist_art": "https://picsum.photos/id/1011/400/300",
+        "playlist_likes": "5",
+        "songs": [
+        {
+            "title": "POWER",
+            "artist": "Kanye West",
+            "album": "My Beautiful Dark Twisted Fantasy"
+        },
+        {
+            "title": "Stronger",
+            "artist": "Kanye West",
+            "album": "Graduation"
+        }
+        ]
+    },
+    {
+        "playlistID": "003",
+        "playlist_name": "Coding Focus",
+        "playlist_author": "Caleb Calderon",
+        "playlist_art": "https://picsum.photos/id/1025/400/300",
+        "playlist_likes": "5",
+        "songs": [
+        {
+            "title": "Intro",
+            "artist": "The xx",
+            "album": "xx"
+        },
+        {
+            "title": "Weightless",
+            "artist": "Marconi Union",
+            "album": "Ambient Transmissions Vol 2"
+        }
+        ]
+    },
+    {
+        "playlistID": "004",
+        "playlist_name": "Throwback Hits",
+        "playlist_author": "Caleb Calderon",
+        "playlist_art": "https://picsum.photos/id/1044/400/300",
+        "playlist_likes": "5",
+        "songs": [
+        {
+            "title": "Hey Ya!",
+            "artist": "OutKast",
+            "album": "Speakerboxxx/The Love Below"
+        },
+        {
+            "title": "Toxic",
+            "artist": "Britney Spears",
+            "album": "In the Zone"
+        }
+        ]
+    },
+    {
+        "playlistID": "005",
+        "playlist_name": "Rainy Day Lo-Fi",
+        "playlist_author": "Caleb Calderon",
+        "playlist_art": "https://picsum.photos/id/1005/400/300",
+        "playlist_likes": "5",
+        "songs": [
+        {
+            "title": "Sleepy Fish",
+            "artist": "Velvet",
+            "album": "Watercolor"
+        },
+        {
+            "title": "Lukrembo",
+            "artist": "Biscuit",
+            "album": "Beats to Relax/Study To"
+        }
+        ]
+    }
+    ]
+}
