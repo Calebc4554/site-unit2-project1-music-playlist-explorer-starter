@@ -243,9 +243,110 @@ function deletePlaylist(playlist) {
     }
 }
 
+// add new playlist 
+document.getElementById('add-playlist-form').addEventListener('submit', function(event) {
+    event.preventDefault();
 
+    const playlistName = document.getElementById('new-playlist-name').value;
+    const playlistImg = document.getElementById('new-playlist-img').value;
+    const playlistAuthor = document.getElementById('new-playlist-author').value;
 
+    const songInputs = document.querySelectorAll('.song-input-row');
+    const songs = Array.from(songInputs).map(input => ({
+        title: input.querySelector('.new-song-title').value,
+        artist: input.querySelector('.new-song-artist').value,
+        duration: '3:00' 
+    }));
 
+    const newPlaylist = {
+        playlist_name: playlistName,
+        playlist_author: playlistAuthor,
+        playlist_art: playlistImg,
+        playlist_likes: 0,
+        songs: songs
+    };
 
+    allPlaylists.push(newPlaylist);
 
+    addPlaylistToDOM(newPlaylist);
 
+    this.reset();
+});
+
+document.getElementById('add-song-button').addEventListener('click', function() {
+    const songContainer = document.getElementById('new-songs-container');
+    const newSongInputRow = document.createElement('div');
+    newSongInputRow.classList.add('song-input-row');
+    newSongInputRow.innerHTML = `
+        <input type="text" class="new-song-title" required placeholder="Song Title" />
+        <input type="text" class="new-song-artist" required placeholder="Artist Name" />
+    `;
+    songContainer.appendChild(newSongInputRow);
+});
+
+function addPlaylistToDOM(playlist) {
+    const container = document.getElementById("playlist-cards");
+
+    const playlistCard = document.createElement("div");
+    playlistCard.setAttribute("class", "playlist");
+
+    const playlistImg = document.createElement("img");
+    playlistImg.setAttribute("class", "playlist-img");
+    playlistImg.src = playlist.playlist_art;
+    playlistImg.alt = playlist.playlist_name;
+    playlistCard.appendChild(playlistImg);
+
+    const playlistContent = document.createElement("div");
+    playlistContent.setAttribute("class", "playlist-content");
+    playlistCard.appendChild(playlistContent);
+
+    const playlistName = document.createElement("h2");
+    playlistName.textContent = playlist.playlist_name;
+    playlistContent.appendChild(playlistName);
+
+    const playlistAuthor = document.createElement("p");
+    playlistAuthor.textContent = playlist.playlist_author;
+    playlistContent.appendChild(playlistAuthor);
+
+    const likesContainer = document.createElement("div");
+    likesContainer.setAttribute("class", "likes-container");
+
+    const playlistLikes = document.createElement("p");
+    playlistLikes.setAttribute("class", "playlist-likes");
+    playlistLikes.textContent = playlist.playlist_likes;
+    likesContainer.appendChild(playlistLikes);
+
+    const playlistLikesIcon = document.createElement("i");
+    playlistLikesIcon.setAttribute("class", "fas fa-heart");
+    likesContainer.appendChild(playlistLikesIcon);
+    playlistContent.appendChild(likesContainer);
+    container.appendChild(playlistCard);
+
+    const editBtn = document.createElement("button");
+    editBtn.textContent = "Edit";
+    editBtn.classList.add("edit-button");
+    playlistContent.appendChild(editBtn);
+
+    editBtn.addEventListener("click", (event) => {
+        event.stopPropagation();
+        startEditing(playlist);
+    });
+
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "Delete";
+    deleteBtn.classList.add("delete-button");
+    playlistContent.appendChild(deleteBtn);
+    deleteBtn.addEventListener("click", (event) => {
+        event.stopPropagation();
+        deletePlaylist(playlist);
+    });
+
+    playlistLikesIcon.addEventListener('click', (event) => {
+        event.stopPropagation();
+        toggleLike(playlistLikesIcon, playlistLikes);
+    });
+
+    playlistCard.addEventListener('click', () => {
+        openModal(playlist);
+    });
+}
