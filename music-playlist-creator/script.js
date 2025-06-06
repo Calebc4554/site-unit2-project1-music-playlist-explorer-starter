@@ -112,20 +112,40 @@
         modalPlaylistCreator.innerHTML = `Created by: ${playlist.playlist_author}`;
         const mainModalImg = document.getElementById("main-modal-img");
         mainModalImg.src = playlist.playlist_art;
+        
 
         function updateModalWithSongs(songs) {
-            const songImages = document.querySelectorAll(".song-img");
-            const songTitles = document.querySelectorAll(".song-title");
-            const artistNames = document.querySelectorAll(".artist-name");
-            const artistDurations = document.querySelectorAll(".duration");
-            songs.forEach((song, index) => {
-                if (index < songImages.length) {
-                    songImages[index].src = song.song_art;
-                    songTitles[index].innerHTML = `${song.title}`;
-                    artistNames[index].innerHTML = `${song.artist}`;
-                    artistDurations[index].innerHTML = `${song.duration}`;
-                }
-            });
+        const songContainer = document.querySelector('.song-container');
+        while (songContainer.firstChild) {
+            songContainer.removeChild(songContainer.firstChild);
+        }
+        songs.forEach((song) => {
+            const article = document.createElement('article');
+            article.classList.add('songs');
+            const img = document.createElement('img');
+            img.classList.add('song-img');
+            img.src = song.song_art;
+            article.appendChild(img);
+            const div = document.createElement('div');
+            div.classList.add('song-info');
+            const h3 = document.createElement('h3');
+            h3.classList.add('song-title');
+            h3.innerHTML = `${song.title}`;
+            div.appendChild(h3);
+            const p = document.createElement('p');
+            p.classList.add('artist-name');
+            p.innerHTML = `${song.artist}`;
+            div.appendChild(p);
+            const durationDiv = document.createElement('div');
+            durationDiv.classList.add('duration-container');
+            const durationP = document.createElement('p');
+            durationP.classList.add('duration');
+            durationP.innerHTML = `${song.duration}`;
+            durationDiv.appendChild(durationP);
+            div.appendChild(durationDiv);
+            article.appendChild(div);
+            songContainer.appendChild(article);
+    });
         }
         updateModalWithSongs(playlist.songs);
         const shuffleButton = document.getElementById("shuffle-button");
@@ -274,6 +294,7 @@ document.getElementById('add-playlist-form').addEventListener('submit', function
 });
 
 document.getElementById('add-song-button').addEventListener('click', function() {
+    
     const songContainer = document.getElementById('new-songs-container');
     const newSongInputRow = document.createElement('div');
     newSongInputRow.classList.add('song-input-row');
@@ -285,6 +306,7 @@ document.getElementById('add-song-button').addEventListener('click', function() 
 });
 
 function addPlaylistToDOM(playlist) {
+
     const container = document.getElementById("playlist-cards");
 
     const playlistCard = document.createElement("div");
@@ -330,6 +352,7 @@ function addPlaylistToDOM(playlist) {
     editBtn.addEventListener("click", (event) => {
         event.stopPropagation();
         startEditing(playlist);
+
     });
 
     const deleteBtn = document.createElement("button");
