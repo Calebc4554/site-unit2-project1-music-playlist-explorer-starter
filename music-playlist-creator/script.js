@@ -373,3 +373,30 @@ function addPlaylistToDOM(playlist) {
         openModal(playlist);
     });
 }
+
+
+// search feature
+document.getElementById('search-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const query = document.getElementById('search-input').value.toLowerCase();
+    filterPlaylists(query);
+});
+document.getElementById('clear-button').addEventListener('click', function() {
+    document.getElementById('search-input').value = '';
+    filterPlaylists(''); 
+});
+
+//filter the playlist function
+function filterPlaylists(query) {
+    const container = document.getElementById("playlist-cards");
+    container.innerHTML = ''; 
+
+    const filteredPlaylists = allPlaylists.filter(playlist => {
+        return playlist.playlist_name.toLowerCase().includes(query) ||
+        playlist.playlist_author.toLowerCase().includes(query);
+    });
+
+    filteredPlaylists.forEach(playlist => {
+        addPlaylistToDOM(playlist);
+    });
+}
