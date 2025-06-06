@@ -45,6 +45,26 @@
                 playlistContent.appendChild(likesContainer);
                 container.appendChild(playlistCard);
 
+                const editBtn = document.createElement("button");
+                editBtn.textContent = "Edit";
+                editBtn.classList.add("edit-button");
+                playlistContent.appendChild(editBtn);
+
+                editBtn.addEventListener("click", (event) => {
+                event.stopPropagation();
+                startEditing(playlist);
+                });
+
+                const deleteBtn = document.createElement("button");
+                deleteBtn.textContent = "Delete";
+                deleteBtn.classList.add("delete-button");
+                playlistContent.appendChild(deleteBtn);
+
+                deleteBtn.addEventListener("click", (event) => {
+                event.stopPropagation();
+                deletePlaylist(playlist);
+                });
+
                 playlistLikesIcon.addEventListener('click', (event) => {
                     event.stopPropagation();
                     toggleLike(playlistLikesIcon, playlistLikes);
@@ -199,4 +219,5 @@
     allPlaylistsButton.addEventListener('click', () => {
         window.location.href = 'index.html';
     });
+
 
