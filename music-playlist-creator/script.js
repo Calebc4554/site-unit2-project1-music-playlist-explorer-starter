@@ -1,5 +1,3 @@
-let globalSongsArray = [];
-
 function loadPlaylistFromJson() {
     fetch('data/data.json')
     .then(res => res.json())
@@ -8,8 +6,6 @@ function loadPlaylistFromJson() {
             alert("Json is Empty");
             return;
         }
-
-        globalSongsArray = data.songs;
 
         const container = document.getElementById("playlist-cards");
 
@@ -89,7 +85,6 @@ function openModal(playlist) {
     modalPlaylistTitle.innerHTML = `${playlist.playlist_name}`;
     const modalPlaylistCreator = document.getElementById('modal-playlist-creator');
     modalPlaylistCreator.innerHTML = `Created by: ${playlist.playlist_author}`;
-    
     const mainModalImg = document.getElementById("main-modal-img");
     mainModalImg.src = playlist.playlist_art;
 
@@ -135,4 +130,73 @@ function closeModal() {
 }
 
 loadPlaylistFromJson();
+
+function displayRandomPlaylist() {
+    fetch('data/data.json')
+        .then(res => res.json())
+        .then(data => {
+            const randomPlaylist = data.playlists[Math.floor(Math.random() * data.playlists.length)];
+
+            document.getElementById('featured-img').src = randomPlaylist.playlist_art;
+
+            document.getElementById('modal-playlist-title').innerHTML = `${randomPlaylist.playlist_name}`;
+
+            document.getElementById('modal-playlist-creator').innerHTML = `Created by: ${randomPlaylist.playlist_author}`;
+
+            const songContainer = document.querySelector('.song-container');
+            while (songContainer.firstChild) {
+                songContainer.removeChild(songContainer.firstChild);
+            }
+
+            randomPlaylist.songs.forEach((song, index) => {
+                const article = document.createElement('article');
+                article.classList.add('songs');
+
+                const img = document.createElement('img');
+                img.classList.add('song-img');
+                img.src = song.song_art;
+                article.appendChild(img);
+
+                const div = document.createElement('div');
+                div.classList.add('song-info');
+
+                const h3 = document.createElement('h3');
+                h3.classList.add('song-title');
+                h3.innerHTML = `${song.title}`;
+                div.appendChild(h3);
+
+                const p = document.createElement('p');
+                p.classList.add('artist-name');
+                p.innerHTML = `${song.artist}`;
+                div.appendChild(p);
+
+                const durationDiv = document.createElement('div');
+                durationDiv.classList.add('duration-container');
+
+                const durationP = document.createElement('p');
+                durationP.classList.add('duration');
+                durationP.innerHTML = `${song.duration}`;
+                durationDiv.appendChild(durationP);
+
+                div.appendChild(durationDiv);
+                article.appendChild(div);
+
+                songContainer.appendChild(article);
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching the JSON:', error);
+        });
+}
+
+displayRandomPlaylist();
+
+const featuredButton = document.getElementById('featured-button');
+const allPlaylistsButton = document.getElementById('all-playlists-button');
+featuredButton.addEventListener('click', () => {
+    window.location.href = 'featured.html';
+});
+allPlaylistsButton.addEventListener('click', () => {
+    window.location.href = 'index.html';
+});
 

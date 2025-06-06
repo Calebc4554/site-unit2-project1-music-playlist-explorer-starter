@@ -3,19 +3,40 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: #f8f8f8;  
+    background-color: white;  
 }
 
 header {
-    background-color: lightgray;
+    display: flex;
+    background-color:#9ec0ff;
     padding: 10px;
     font-size: 15px;
     size: 10px;
+    justify-content: space-between;
+    
+}
+
+.header-div {
+    display: flex;
+    align-items:  center ;
+    margin-right: 50px;
+}
+
+.header-buttons {
+    padding: 20px;
+    margin: 5px;
+    background-color: rgb(255, 174, 174);
+    color: black;
+}
+
+#header-title {
+    margin-left: 50px;
 }
 
 footer {
     background-color: lightgray;
     padding: 25px;
+    background-color:#9ec0ff;
 }
 
 .playlist-cards {
@@ -25,6 +46,7 @@ footer {
     align-items: center;
     padding: 40px ;
     gap: 25px;
+    background-color: #ffa9eb;
 }
 
 
@@ -38,6 +60,7 @@ footer {
     margin-top: 25px;
     border: solid black;
     box-shadow: 5px 3px 5px gray; 
+    background-color: #fffff8;
 
 }
 
@@ -193,4 +216,10 @@ footer {
     height: 50px;
     width: 75px;
     align-self  : center;
+}
+
+#featured-img {
+    display: flex;
+    align-content: center;
+    justify-content: center ;
 }
