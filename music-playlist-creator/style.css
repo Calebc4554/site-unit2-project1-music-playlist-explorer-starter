@@ -96,9 +96,12 @@ footer {
     flex-wrap: wrap;
 }
 
+
+
 .main-modal-text {
     display: flex;
     flex-direction: column;
+    padding: 25px;
 }
 
 .song-container {
@@ -184,4 +187,10 @@ footer {
 
 .fas.fa-heart.liked {
     color: red; /* Color when liked */
+}
+
+.shuffle-button {
+    height: 50px;
+    width: 75px;
+    align-self  : center;
 }

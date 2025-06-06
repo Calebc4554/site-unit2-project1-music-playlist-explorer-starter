@@ -1,3 +1,5 @@
+let globalSongsArray = [];
+
 function loadPlaylistFromJson() {
     fetch('data/data.json')
     .then(res => res.json())
@@ -6,6 +8,8 @@ function loadPlaylistFromJson() {
             alert("Json is Empty");
             return;
         }
+
+        globalSongsArray = data.songs;
 
         const container = document.getElementById("playlist-cards");
 
@@ -38,7 +42,7 @@ function loadPlaylistFromJson() {
             playlistLikes.setAttribute("class", "playlist-likes");
             playlistLikes.textContent = playlist.playlist_likes;
             likesContainer.appendChild(playlistLikes);
-            
+
             const playlistLikesIcon = document.createElement("i");
             playlistLikesIcon.setAttribute("class", "fas fa-heart");
             likesContainer.appendChild(playlistLikesIcon);
@@ -53,6 +57,7 @@ function loadPlaylistFromJson() {
             playlistCard.addEventListener('click', () => {
                 openModal(playlist);
             });
+
         }
     })
     .catch(error => {
@@ -80,47 +85,45 @@ function openModal(playlist) {
     const closeButton = document.getElementById('close-button');
     closeButton.addEventListener('click', closeModal);
     
-    const modalPlaylistTitle = document.getElementById('modal-playlist-title')
+    const modalPlaylistTitle = document.getElementById('modal-playlist-title');
     modalPlaylistTitle.innerHTML = `${playlist.playlist_name}`;
-
-    const modalPlaylistCreator = document.getElementById('modal-playlist-creator')
+    const modalPlaylistCreator = document.getElementById('modal-playlist-creator');
     modalPlaylistCreator.innerHTML = `Created by: ${playlist.playlist_author}`;
     
     const mainModalImg = document.getElementById("main-modal-img");
     mainModalImg.src = playlist.playlist_art;
 
-    const songImages = document.querySelectorAll(".song-img");
-    playlist.songs.forEach((song, index) => {
-        if (index < songImages.length) {
-            const songImg = songImages[index];
-            songImg.src = song.song_art;
-        }
-    });
-
-    const songTitles = document.querySelectorAll(".song-title");
-    playlist.songs.forEach((song, index) => {
-        if (index < songTitles.length) {
-            const songTitle = songTitles[index];
-            songTitle.innerHTML = `${song.title}`;
-        }
-    })
-
-    const artistNames = document.querySelectorAll(".artist-name");
-    playlist.songs.forEach((song, index) => {
-        if (index < artistNames.length) {
-            const artistName = artistNames[index];
-            artistName.innerHTML = `${song.artist}`;
-        }
-    })
-
-    const artistDurations = document.querySelectorAll(".duration");
-    playlist.songs.forEach((song, index) => {
-        if (index < artistDurations.length) {
-            const artistDuration = artistNames[index];
-            artistDuration.innerHTML = `${song.duration}`;
-        }
-    })
+    function updateModalWithSongs(songs) {
+        const songImages = document.querySelectorAll(".song-img");
+        const songTitles = document.querySelectorAll(".song-title");
+        const artistNames = document.querySelectorAll(".artist-name");
+        const artistDurations = document.querySelectorAll(".duration");
+        songs.forEach((song, index) => {
+            if (index < songImages.length) {
+                songImages[index].src = song.song_art;
+                songTitles[index].innerHTML = `${song.title}`;
+                artistNames[index].innerHTML = `${song.artist}`;
+                artistDurations[index].innerHTML = `${song.duration}`;
+            }
+        });
+    }
+    updateModalWithSongs(playlist.songs);
+    const shuffleButton = document.getElementById("shuffle-button");
+    shuffleButton.onclick = function() {
+        shuffle(playlist.songs);
+        updateModalWithSongs(playlist.songs);
+    };
 }
+function shuffle(array) {
+    let currentIndex = array.length, randomIndex;
+    while (currentIndex != 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+        [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+    }
+}
+
 
 function closeModal() {
     const modal = document.getElementById('modal');
@@ -130,7 +133,6 @@ function closeModal() {
     const modal = document.getElementById('modal');
     modal.style.display = "none";
 }
-
 
 loadPlaylistFromJson();
 
