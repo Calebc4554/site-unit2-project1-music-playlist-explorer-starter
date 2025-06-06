@@ -129,7 +129,7 @@ function deletePlaylist(playlist) {
         }
     }
 }
-    //didnt get to implement with the time I had
+    //didnt get to implement with the time I
     function startEditing() {
 
     }
@@ -305,7 +305,8 @@ document.getElementById('add-playlist-form').addEventListener('submit', function
     const songs = Array.from(songInputs).map(input => ({
         title: input.querySelector('.new-song-title').value,
         artist: input.querySelector('.new-song-artist').value,
-        duration: '3:00' 
+        duration: '3:00',
+        song_art: 'https://picsum.photos/200/200'
     }));
 
     const newPlaylist = {
