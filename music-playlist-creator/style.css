@@ -153,7 +153,6 @@ footer {
 }
 
 
-
 .song-info h3 {
     margin: 0;
 }
@@ -230,6 +229,7 @@ footer {
     margin: 20px auto;
     border: 2px solid #a0c4ff;
     max-width: 600px;
+    height: 420px;
     }
 
     .add-playlist-section h2 {
@@ -238,10 +238,11 @@ footer {
     color: #333;
     }
 
+
     .form-row {
     display: flex;
     flex-direction: column;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     }
 
     .form-row label {

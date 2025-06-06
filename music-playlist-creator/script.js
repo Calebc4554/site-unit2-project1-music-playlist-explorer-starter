@@ -1,3 +1,8 @@
+    let allPlaylists = [];       
+    let editingIndex = -1;
+    let currentFilterQuery = ""; 
+
+    
     function loadPlaylistFromJson() {
         fetch('data/data.json')
         .then(res => res.json())
@@ -7,6 +12,7 @@
                 return;
             }
 
+            allPlaylists = data.playlists; 
             const container = document.getElementById("playlist-cards");
 
             for (const playlist of data.playlists) {
@@ -59,10 +65,9 @@
                 deleteBtn.textContent = "Delete";
                 deleteBtn.classList.add("delete-button");
                 playlistContent.appendChild(deleteBtn);
-
                 deleteBtn.addEventListener("click", (event) => {
-                event.stopPropagation();
-                deletePlaylist(playlist);
+                    event.stopPropagation();
+                    deletePlaylist(playlist);
                 });
 
                 playlistLikesIcon.addEventListener('click', (event) => {
@@ -219,5 +224,28 @@
     allPlaylistsButton.addEventListener('click', () => {
         window.location.href = 'index.html';
     });
+
+function deletePlaylist(playlist) {
+    const idx = allPlaylists.indexOf(playlist);
+    if (idx === -1) return;
+
+    allPlaylists.splice(idx, 1);
+
+    const container = document.getElementById("playlist-cards");
+    const playlistCards = container.getElementsByClassName("playlist");
+    for (let i = 0; i < playlistCards.length; i++) {
+        const card = playlistCards[i];
+        const playlistNameElement = card.querySelector("h2");
+        if (playlistNameElement && playlistNameElement.textContent === playlist.playlist_name) {
+            container.removeChild(card);
+            break;
+        }
+    }
+}
+
+
+
+
+
 
 
