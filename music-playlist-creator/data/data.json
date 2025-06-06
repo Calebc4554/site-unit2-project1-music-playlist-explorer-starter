@@ -5,7 +5,7 @@
             "playlist_name": "Chill Vibes",
             "playlist_author": "Caleb Calderon",
             "playlist_art": "https://picsum.photos/id/240/200/200",
-            "playlist_likes": "5",
+            "playlist_likes": "0",
             "heart_icon": "fas fa-heart",
             "songs": [
                 {
@@ -80,7 +80,7 @@
                     "title": "Breathe",
                     "artist": "Télépopmusik",
                     "duration": "4:38",
-                    "song_art": "https://picsum.photos/id/245/200/200"
+                    "song_art": "https://picsum.photos/id/243/200/200"
                 }
             ]
         },
@@ -96,7 +96,7 @@
                     "title": "Hey Ya!",
                     "artist": "OutKast",
                     "duration": "3:55",
-                    "song_art": "https://picsum.photos/id/246/200/200"
+                    "song_art": "https://picsum.photos/id/243/200/200"
                 },
                 {
                     "title": "Toxic",
