@@ -148,3 +148,40 @@ footer {
 }
 
 
+.fas.fa-heart:hover {
+    transform: scale(1.2); 
+}
+
+.fas.fa-heart {
+    color: gray; 
+    transition: color 0.3s ease; 
+}
+
+.fas.fa-heart.liked {
+    color: red; 
+}
+
+.playlistLikes {
+    display: flex;
+    flex-direction: row ;
+}
+
+.likes-container {
+    display: flex;
+    align-items: center; /* Align items vertically centered */
+    gap: 5px; /* Add some space between the number and the icon */
+}
+
+.fas.fa-heart {
+    font-size: 20px;
+    transition: color 0.3s ease, transform 0.2s ease; 
+    color: gray; /* Default color */
+}
+
+.fas.fa-heart:hover {
+    transform: scale(1.2); 
+}
+
+.fas.fa-heart.liked {
+    color: red; /* Color when liked */
+}

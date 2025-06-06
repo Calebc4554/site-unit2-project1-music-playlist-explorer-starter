@@ -31,11 +31,24 @@ function loadPlaylistFromJson() {
             playlistAuthor.textContent = playlist.playlist_author;
             playlistContent.appendChild(playlistAuthor);
 
-            const playlistLikes = document.createElement("p");
-            playlistLikes.textContent = playlist.playlist_likes;
-            playlistContent.appendChild(playlistLikes);
+            const likesContainer = document.createElement("div");
+            likesContainer.setAttribute("class", "likes-container");
 
+            const playlistLikes = document.createElement("p");
+            playlistLikes.setAttribute("class", "playlist-likes");
+            playlistLikes.textContent = playlist.playlist_likes;
+            likesContainer.appendChild(playlistLikes);
+            
+            const playlistLikesIcon = document.createElement("i");
+            playlistLikesIcon.setAttribute("class", "fas fa-heart");
+            likesContainer.appendChild(playlistLikesIcon);
+            playlistContent.appendChild(likesContainer);
             container.appendChild(playlistCard);
+
+            playlistLikesIcon.addEventListener('click', (event) => {
+                event.stopPropagation();
+                toggleLike(playlistLikesIcon, playlistLikes);
+            });
 
             playlistCard.addEventListener('click', () => {
                 openModal(playlist);
@@ -45,6 +58,18 @@ function loadPlaylistFromJson() {
     .catch(error => {
         console.error('Error fetching the JSON:', error);
     });
+}
+
+function toggleLike(icon, likesElement) {
+    const isLiked = icon.classList.toggle("liked");
+    let likesCount = parseInt(likesElement.textContent, 10);
+
+    if (isLiked) {
+        likesCount += 1;
+    } else {
+        likesCount -= 1;
+    }
+    likesElement.textContent = likesCount;
 }
 
 function openModal(playlist) {

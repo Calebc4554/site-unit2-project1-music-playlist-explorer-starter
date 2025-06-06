@@ -6,6 +6,7 @@
             "playlist_author": "Caleb Calderon",
             "playlist_art": "assets/img/playlist.png",
             "playlist_likes": "5",
+            "heart_icon": "fas fa-heart",
             "songs": [
                 {
                     "title": "Late Night",
@@ -33,6 +34,7 @@
             "playlist_author": "Caleb Calderon",
             "playlist_art": "https://picsum.photos/id/1011/500/300",
             "playlist_likes": "5",
+            "heart_icon": "fas fa-heart",
             "songs": [
                 {
                     "title": "POWER",
@@ -60,6 +62,7 @@
             "playlist_author": "Caleb Calderon",
             "playlist_art": "https://picsum.photos/id/1025/400/300",
             "playlist_likes": "5",
+            "heart_icon": "fas fa-heart",
             "songs": [
                 {
                     "title": "Intro",
@@ -87,6 +90,7 @@
             "playlist_author": "Caleb Calderon",
             "playlist_art": "https://picsum.photos/id/1044/400/300",
             "playlist_likes": "5",
+            "heart_icon": "fas fa-heart",
             "songs": [
                 {
                     "title": "Hey Ya!",
@@ -114,6 +118,7 @@
             "playlist_author": "Caleb Calderon",
             "playlist_art": "https://picsum.photos/id/1005/400/300",
             "playlist_likes": "5",
+            "heart_icon": "fas fa-heart",
             "songs": [
                 {
                     "title": "Sleepy Fish",
@@ -141,6 +146,7 @@
             "playlist_author": "Caleb Calderon",
             "playlist_art": "https://picsum.photos/id/1062/400/300",
             "playlist_likes": "8",
+            "heart_icon": "fas fa-heart",
             "songs": [
                 {
                     "title": "Uptown Funk",
@@ -168,6 +174,7 @@
             "playlist_author": "Caleb Calderon",
             "playlist_art": "https://picsum.photos/id/1074/400/300",
             "playlist_likes": "12",
+            "heart_icon": "fas fa-heart",
             "songs": [
                 {
                     "title": "River Flows in You",
@@ -195,6 +202,7 @@
             "playlist_author": "Caleb Calderon",
             "playlist_art": "https://picsum.photos/id/1084/400/300",
             "playlist_likes": "9",
+            "heart_icon": "fas fa-heart",
             "songs": [
                 {
                     "title": "Take Five",
