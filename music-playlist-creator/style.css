@@ -223,3 +223,166 @@ footer {
     align-content: center;
     justify-content: center ;
 }
+
+    .add-playlist-section {
+    background-color: #f0f8ff;
+    padding: 20px;
+    margin: 20px auto;
+    border: 2px solid #a0c4ff;
+    max-width: 600px;
+    }
+
+    .add-playlist-section h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #333;
+    }
+
+    .form-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+    }
+
+    .form-row label {
+    margin-bottom: 4px;
+    font-weight: bold;
+    }
+
+    .form-row input {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    }
+
+    #new-songs-container h3 {
+    margin-top: 16px;
+    margin-bottom: 8px;
+    }
+
+    .song-input-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+    }
+
+    .song-input-row input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    }
+
+    #add-song-button {
+    background-color: #ff9f43;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 16px;
+    }
+
+    #add-song-button:hover {
+    background-color: #e58e26;
+    }
+
+    #submit-playlist-button {
+    background-color: #1dd1a1;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    }
+
+    #submit-playlist-button:hover {
+    background-color: #10ac84;
+    }
+
+
+    .edit-button,
+    .delete-button {
+    margin-top: 8px;
+    padding: 6px 10px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    }
+
+    .edit-button {
+    background-color: #74b9ff;
+    color: white;
+    }
+
+    .edit-button:hover {
+    background-color: #0984e3;
+    }
+
+    .delete-button {
+    background-color: #ff7675;
+    color: white;
+    margin-left: 8px;
+    }
+
+    .delete-button:hover {
+    background-color: #d63031;
+    }
+
+    .controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 800px;
+    gap: 12px;
+    }
+
+    #search-form {
+    display: flex;
+    gap: 8px;
+    }
+
+    #search-input {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #888;
+    border-radius: 4px;
+    width: 200px;
+    }
+
+    #search-button,
+    #clear-button {
+    background-color: #74b9ff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    }
+
+    #search-button:hover,
+    #clear-button:hover {
+    background-color: #0984e3;
+    }
+
+    .sort-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    }
+
+    #sort-select {
+    padding: 8px;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid #888;
+    }
+
+

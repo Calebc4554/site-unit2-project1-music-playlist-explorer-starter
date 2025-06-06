@@ -1,87 +1,191 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Music Playlist Explorer</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    </head>
+    <body>
     <header>
-        <h1 id = "header-title">Music Playlist Explorer</h1>
-        <div class = "header-div">
-            <button id = "featured-button" class = "header-buttons">Featured</button>
-            <button id = "all-playlists-button" class = "header-buttons">All Playlist</button>
+        <h1 id="header-title">Music Playlist Explorer</h1>
+        <div class="header-div">
+        <button id="featured-button" class="header-buttons">Featured</button>
+        <button id="all-playlists-button" class="header-buttons">All Playlists</button>
         </div>
     </header>
 
-    <main> 
-        <section id = "playlist-cards" class = "playlist-cards">
+    <main>
+        <!-- ++++++++++++++ ADD / EDIT PLAYLIST FORM ++++++++++++++ -->
+        <section class="add-playlist-section">
+        <h2 id="form-heading">Add New Playlist</h2>
+        <form id="add-playlist-form">
+            <div class="form-row">
+            <label for="new-playlist-name">Playlist Name:</label>
+            <input
+                type="text"
+                id="new-playlist-name"
+                required
+                placeholder="e.g. Summer Vibes"
+            />
+            </div>
+            <div class="form-row">
+            <label for="new-playlist-img">Cover Image URL:</label>
+            <input
+                type="url"
+                id="new-playlist-img"
+                required
+                placeholder="https://…"
+            />
+            </div>
+            <div class="form-row">
+            <label for="new-playlist-author">Author:</label>
+            <input
+                type="text"
+                id="new-playlist-author"
+                required
+                placeholder="e.g. DJ Alice"
+            />
+            </div>
+
+            <!-- Container where song‐inputs will be appended -->
+            <div id="new-songs-container">
+            <h3>Songs:</h3>
+            <!-- by default, start with one song row -->
+            <div class="song-input-row">
+                <input
+                type="text"
+                class="new-song-title"
+                required
+                placeholder="Song Title"
+                />
+                <input
+                type="text"
+                class="new-song-artist"
+                required
+                placeholder="Artist Name"
+                />
+            </div>
+            </div>
+            <button type="button" id="add-song-button">+ Add Another Song</button>
+
+            <div class="form-row">
+            <button type="submit" id="submit-playlist-button">
+                Submit Playlist
+            </button>
+            </div>
+        </form>
+        </section>
+
+        <section class="controls">
+        <form id="search-form">
+            <input
+            type="text"
+            id="search-input"
+            placeholder="Search by name or author…"
+            />
+            <button type="submit" id="search-button">Search</button>
+            <button type="button" id="clear-button">Clear</button>
+        </form>
+
+        <div class="sort-container">
+            <label for="sort-select">Sort by:</label>
+            <select id="sort-select">
+            <option value="name">Name (A – Z)</option>
+            <option value="likes">Likes (high → low)</option>
+            <option value="date">Date Added (new → old)</option>
+            </select>
+        </div>
+        </section>
+
+        <section id="playlist-cards" class="playlist-cards">
 
         </section>
-    
-        <div id = "modal" class = "modal">
-            <div class = "modal-content"> 
-                <button id="close-button" style="position: flex; flex-wrap: wrap;">&times;</button>
-                <div class = "main-modal">
-                    <img id = "main-modal-img" src="assets/img/playlist.png" alt="playlist-picture">
-                    <div class = "main-modal-text">
-                        <h1 id = "modal-playlist-title">Playlist title</h1>
-                        <h2 id = "modal-playlist-creator">Creator Name</h2>
-                        <button id = "shuffle-button" class = "shuffle-button"> Shuffle </button>
-                    </div>
-                </div>
-                
-                <div class = "song-container">
-                    <article class = "songs">
-                        <img class = "song-img" src="assets/img/song.png" alt="song-picture">
-                        <div class="song-info">
-                            <div class = song-content-container>
-                                <h3 class = 'song-title'> Song Title </h3>
-                                <p class = "artist-name">Artist Name</p>
-                            </div>
-                            <div class = "duration-container">
-                                <p class = "duration" id = "duration"> Duration </p>
-                            </div>
-                        </div>
-                    </article>
 
-                    <article class = "songs">
-                        <img class = "song-img" src="assets/img/song.png" alt="song-picture">
-                        <div class="song-info">
-                            <div class = song-content-container>
-                                <h3 class = 'song-title'> Song Title </h3>
-                                <p class = "artist-name">Artist Name</p>
-                            <div class = "duration-container">
-                                <p class = "duration" id = "duration"> Duration </p>
+        <div id="modal" class="modal">
+        <div class="modal-content">
+            <button id="close-button">&times;</button>
 
-                        </div>
-                    </article>
-
-                    <article class = "songs">
-                        <img class = "song-img" src="assets/img/song.png" alt="song-picture">
-                        <div class="song-info">
-                            <div class = song-content-container>
-                                <h3 class = 'song-title'> Song Title </h3>
-                                <p class = "artist-name">Artist Name</p>
-                            </div>
-                            <div class = "duration-container">
-                                <p class = "duration" id = "duration"> Duration </p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
+            <div class="main-modal">
+            <img
+                id="main-modal-img"
+                src="assets/img/playlist.png"
+                alt="playlist cover"
+            />
+            <div class="main-modal-text">
+                <h1 id="modal-playlist-title">Playlist title</h1>
+                <h2 id="modal-playlist-creator">Creator Name</h2>
+                <button id="shuffle-button" class="shuffle-button">
+                Shuffle
+                </button>
             </div>
+            </div>
+
+            <div class="song-container">
+
+            <article class="songs">
+                <img
+                class="song-img"
+                src="assets/img/song.png"
+                alt="song cover"
+                />
+                <div class="song-info">
+                <div class="song-content-container">
+                    <h3 class="song-title">Song Title</h3>
+                    <p class="artist-name">Artist Name</p>
+                </div>
+                <div class="duration-container">
+                    <p class="duration">Duration</p>
+                </div>
+                </div>
+            </article>
+            <article class="songs">
+                <img
+                class="song-img"
+                src="assets/img/song.png"
+                alt="song cover"
+                />
+                <div class="song-info">
+                <div class="song-content-container">
+                    <h3 class="song-title">Song Title</h3>
+                    <p class="artist-name">Artist Name</p>
+                </div>
+                <div class="duration-container">
+                    <p class="duration">Duration</p>
+                </div>
+                </div>
+            </article>
+            <article class="songs">
+                <img
+                class="song-img"
+                src="assets/img/song.png"
+                alt="song cover"
+                />
+                <div class="song-info">
+                <div class="song-content-container">
+                    <h3 class="song-title">Song Title</h3>
+                    <p class="artist-name">Artist Name</p>
+                </div>
+                <div class="duration-container">
+                    <p class="duration">Duration</p>
+                </div>
+                </div>
+            </article>
+            </div>
+        </div>
         </div>
 
     </main>
 
     <footer>
-        <!-- Your footer content here -->
+
     </footer>
+
     <script src="script.js"></script>
-</body>
-</html>
+    </body>
+    </html>
