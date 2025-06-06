@@ -3,7 +3,7 @@
         {
             "playlistID": "001",
             "playlist_name": "Chill Vibes",
-            "playlist_author": "Caleb Calderon",
+            "playlist_author": "Matthew Thomas",
             "playlist_art": "https://picsum.photos/id/240/200/200",
             "playlist_likes": "0",
             "heart_icon": "fas fa-heart",
@@ -59,7 +59,7 @@
         {
             "playlistID": "003",
             "playlist_name": "Coding Focus",
-            "playlist_author": "Caleb Calderon",
+            "playlist_author": "Matthew Thomas",
             "playlist_art": "https://picsum.photos/id/1025/400/300",
             "playlist_likes": "5",
             "heart_icon": "fas fa-heart",

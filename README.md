@@ -133,28 +133,28 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site](htt
 
 ### Walkthrough Video
 
-`TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video actually renders and is playable when viewing this README. Ensure your walkthrough showcases the presence and/or functionality of all features you implemented above (check them off as you film!). Pay attention to any **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS** checkboxes listed above to ensure graders see the full functionality of your website! (🚫 Remove this paragraph after adding walkthrough video)
-
-`ADD_EMBEDDED_CODE_HERE`
+`https://www.loom.com/share/27d1019adddc4ba3bea37e2e89047462?sid=485b9ba0-5f20-4634-a411-e59103103d7a`
 
 ### Reflection
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+Add your response here:
+I think that the Labs really prepared me well with the css in specifc flex boxes. I had a really good understanding of the flex model and the box model and a really good tool that I used in specific was the froggy flex box website. This website that codepath linked gave me great insight on how to set the flex direction, justifying content, and aligning items. I also think that the labs helped with dom manipulation and I got a sold foundation of that through the labs. For example, helped me understand the different between query selector, get element by ID, and query selector all and when to use them.
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-Add your response here
+Add your response here:
+I would have done a couple of things differntly. First, I feel like my code could have been structed and organized a bit better. I could have worked a bit better and instead on working on stretch features, make sure my code for the MVP featuers was well written and well commented so I would have focused more on that. I also would have added a button where I can open and close the add playlist form so it is not in the top of the screen ugly at all times. I would have also dynamically added a way that if you fill out the form the new playlist song image would update as well because right now it is just dynamic. I would have also finished working on the edit button and the sort button. I added the initial buttons in the HTML but did not get time to finish writing the JS for it and i wish I couldve completed that. And the final thing i wish I would have done differently is that I would have used better CSS styling with complementary colors, and made this whole project look a bit nicer. I plan to implement all of these things after the internship when I have more time so that I can put it on my resume!
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+Add your response here:
+I think that the project demo could have been e bit shorter. The video was over 2:30 minutes long and I think this is because I really wanted to show that the features worked and and showed the same features a few times. Other than that I think it went well but in the future I would like to add a voice recording explaning what each feature does.
 
-### Open-source libraries used
+*Did you use any open source libraries?
 
-- Add any links to open-source libraries used in your project.
+I used an open source library for my heart icon called font awesome
 
 ### Shout out
-
-Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+Shout out to Terrance (peer instructor) and Braden Jones. Braden helped me alot with the shuffle portion for the JS as I had a bit trouble writing that and Terrance helped me alot in general but gave me good advice and was super helpful with the CSS portion of the project. Thanks guys!
