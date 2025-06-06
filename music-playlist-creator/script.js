@@ -1,21 +1,28 @@
+    
+    //global variables
     let allPlaylists = [];       
     let editingIndex = -1;
     let currentFilterQuery = ""; 
 
-    
+
+    // dynamically add playlist from json
     function loadPlaylistFromJson() {
         fetch('data/data.json')
         .then(res => res.json())
         .then(data => {
+
+            //check if json is empty and alert if it is
             if (data.playlists.length === 0) {
                 alert("Json is Empty");
                 return;
             }
 
+
             allPlaylists = data.playlists; 
             const container = document.getElementById("playlist-cards");
 
-            for (const playlist of data.playlists) {
+            //for each playlist in the json create all of the elements and append it to the container
+            for (const playlist of allPlaylists) {
                 const playlistCard = document.createElement("div");
                 playlistCard.setAttribute("class", "playlist");
 
@@ -51,39 +58,80 @@
                 playlistContent.appendChild(likesContainer);
                 container.appendChild(playlistCard);
 
+
+                //create the edit button dynamically
                 const editBtn = document.createElement("button");
                 editBtn.textContent = "Edit";
                 editBtn.classList.add("edit-button");
                 playlistContent.appendChild(editBtn);
 
+                //when the edit button is clicked it stops the past event and runs the startEditing function
                 editBtn.addEventListener("click", (event) => {
                 event.stopPropagation();
                 startEditing(playlist);
                 });
 
+
+                //create the delete button dynamically
                 const deleteBtn = document.createElement("button");
                 deleteBtn.textContent = "Delete";
                 deleteBtn.classList.add("delete-button");
                 playlistContent.appendChild(deleteBtn);
+
+                //when the delete button is clicked it stops the past event and runs the deletePlaylist function
                 deleteBtn.addEventListener("click", (event) => {
                     event.stopPropagation();
                     deletePlaylist(playlist);
                 });
 
+
+                //when the likes icon is clicked it stops passed event and runs the function toggleLike
                 playlistLikesIcon.addEventListener('click', (event) => {
                     event.stopPropagation();
                     toggleLike(playlistLikesIcon, playlistLikes);
                 });
 
+
+                //When the playlistCard is clicked it runs the function openModal
                 playlistCard.addEventListener('click', () => {
                     openModal(playlist);
                 });
 
             }
         })
+
+        //Catch any error I might have missed
         .catch(error => {
             console.error('Error fetching the JSON:', error);
         });
+    }
+
+// function for deleting playlist
+function deletePlaylist(playlist) {
+
+    // if the index is negative then it doesnt exist so stop
+    const idx = allPlaylists.indexOf(playlist);
+    if (idx === -1) return;
+
+    //if playlist is found remove it from all playlist
+    allPlaylists.splice(idx, 1);
+
+    const container = document.getElementById("playlist-cards");
+    const playlistCards = container.getElementsByClassName("playlist");
+
+    //loop through playlist cards to see if title matches if it does then set displau of card to none to hide it
+    for (let i = 0; i < playlistCards.length; i++) {
+        const card = playlistCards[i];
+        const playlistNameElement = card.querySelector("h2");
+        if (playlistNameElement && playlistNameElement.textContent === playlist.playlist_name) {
+            card.style.display = "none"; 
+            break;
+        }
+    }
+}
+
+    function startEditing() {
+
     }
 
     function toggleLike(icon, likesElement) {
@@ -115,8 +163,8 @@
         
 
         function updateModalWithSongs(songs) {
-        const songContainer = document.querySelector('.song-container');
-        while (songContainer.firstChild) {
+            const songContainer = document.querySelector('.song-container');
+            while (songContainer.firstChild) {
             songContainer.removeChild(songContainer.firstChild);
         }
         songs.forEach((song) => {
@@ -244,24 +292,6 @@
     allPlaylistsButton.addEventListener('click', () => {
         window.location.href = 'index.html';
     });
-
-function deletePlaylist(playlist) {
-    const idx = allPlaylists.indexOf(playlist);
-    if (idx === -1) return;
-
-    allPlaylists.splice(idx, 1);
-
-    const container = document.getElementById("playlist-cards");
-    const playlistCards = container.getElementsByClassName("playlist");
-    for (let i = 0; i < playlistCards.length; i++) {
-        const card = playlistCards[i];
-        const playlistNameElement = card.querySelector("h2");
-        if (playlistNameElement && playlistNameElement.textContent === playlist.playlist_name) {
-            container.removeChild(card);
-            break;
-        }
-    }
-}
 
 // add new playlist 
 document.getElementById('add-playlist-form').addEventListener('submit', function(event) {
