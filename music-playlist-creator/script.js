@@ -51,15 +51,50 @@ function openModal(playlist) {
     const modal = document.getElementById('modal');
     modal.style.display = "block"; 
     console.log(playlist);
+    
     const closeButton = document.getElementById('close-button');
     closeButton.addEventListener('click', closeModal);
+    
     const modalPlaylistTitle = document.getElementById('modal-playlist-title')
     modalPlaylistTitle.innerHTML = `${playlist.playlist_name}`;
+
     const modalPlaylistCreator = document.getElementById('modal-playlist-creator')
     modalPlaylistCreator.innerHTML = `Created by: ${playlist.playlist_author}`;
+    
     const mainModalImg = document.getElementById("main-modal-img");
     mainModalImg.src = playlist.playlist_art;
-    
+
+    const songImages = document.querySelectorAll(".song-img");
+    playlist.songs.forEach((song, index) => {
+        if (index < songImages.length) {
+            const songImg = songImages[index];
+            songImg.src = song.song_art;
+        }
+    });
+
+    const songTitles = document.querySelectorAll(".song-title");
+    playlist.songs.forEach((song, index) => {
+        if (index < songTitles.length) {
+            const songTitle = songTitles[index];
+            songTitle.innerHTML = `${song.title}`;
+        }
+    })
+
+    const artistNames = document.querySelectorAll(".artist-name");
+    playlist.songs.forEach((song, index) => {
+        if (index < artistNames.length) {
+            const artistName = artistNames[index];
+            artistName.innerHTML = `${song.artist}`;
+        }
+    })
+
+    const artistDurations = document.querySelectorAll(".duration");
+    playlist.songs.forEach((song, index) => {
+        if (index < artistDurations.length) {
+            const artistDuration = artistNames[index];
+            artistDuration.innerHTML = `${song.duration}`;
+        }
+    })
 }
 
 function closeModal() {

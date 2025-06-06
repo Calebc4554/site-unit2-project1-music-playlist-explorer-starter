@@ -10,12 +10,20 @@
                 {
                     "title": "Late Night",
                     "artist": "ODESZA",
-                    "album": "A Moment Apart"
+                    "duration": "3:48",
+                    "song_art": "https://picsum.photos/id/237/200/200"
                 },
                 {
                     "title": "Sunset Lover",
                     "artist": "Petit Biscuit",
-                    "album": "Presence"
+                    "duration": "3:58",
+                    "song_art": "https://picsum.photos/id/238/200/200"
+                },
+                {
+                    "title": "Night Owl",
+                    "artist": "Galimatias",
+                    "duration": "4:12",
+                    "song_art": "https://picsum.photos/id/239/200/200"
                 }
             ]
         },
@@ -29,12 +37,20 @@
                 {
                     "title": "POWER",
                     "artist": "Kanye West",
-                    "album": "My Beautiful Dark Twisted Fantasy"
+                    "duration": "4:52",
+                    "song_art": "https://picsum.photos/id/240/200/200"
                 },
                 {
                     "title": "Stronger",
                     "artist": "Kanye West",
-                    "album": "Graduation"
+                    "duration": "5:12",
+                    "song_art": "https://picsum.photos/id/241/200/200"
+                },
+                {
+                    "title": "Eye of the Tiger",
+                    "artist": "Survivor",
+                    "duration": "4:04",
+                    "song_art": "https://picsum.photos/id/242/200/200"
                 }
             ]
         },
@@ -48,12 +64,20 @@
                 {
                     "title": "Intro",
                     "artist": "The xx",
-                    "album": "xx"
+                    "duration": "2:08",
+                    "song_art": "https://picsum.photos/id/243/200/200"
                 },
                 {
                     "title": "Weightless",
                     "artist": "Marconi Union",
-                    "album": "Ambient Transmissions Vol 2"
+                    "duration": "8:00",
+                    "song_art": "https://picsum.photos/id/244/200/200"
+                },
+                {
+                    "title": "Breathe",
+                    "artist": "Télépopmusik",
+                    "duration": "4:38",
+                    "song_art": "https://picsum.photos/id/245/200/200"
                 }
             ]
         },
@@ -67,12 +91,20 @@
                 {
                     "title": "Hey Ya!",
                     "artist": "OutKast",
-                    "album": "Speakerboxxx/The Love Below"
+                    "duration": "3:55",
+                    "song_art": "https://picsum.photos/id/246/200/200"
                 },
                 {
                     "title": "Toxic",
                     "artist": "Britney Spears",
-                    "album": "In the Zone"
+                    "duration": "3:19",
+                    "song_art": "https://picsum.photos/id/247/200/200"
+                },
+                {
+                    "title": "Billie Jean",
+                    "artist": "Michael Jackson",
+                    "duration": "4:54",
+                    "song_art": "https://picsum.photos/id/248/200/200"
                 }
             ]
         },
@@ -86,12 +118,20 @@
                 {
                     "title": "Sleepy Fish",
                     "artist": "Velvet",
-                    "album": "Watercolor"
+                    "duration": "4:20",
+                    "song_art": "https://picsum.photos/id/249/200/200"
                 },
                 {
                     "title": "Lukrembo",
                     "artist": "Biscuit",
-                    "album": "Beats to Relax/Study To"
+                    "duration": "3:45",
+                    "song_art": "https://picsum.photos/id/250/200/200"
+                },
+                {
+                    "title": "Rainy Days",
+                    "artist": "Lo-Fi Beats",
+                    "duration": "3:30",
+                    "song_art": "https://picsum.photos/id/251/200/200"
                 }
             ]
         },
@@ -105,12 +145,20 @@
                 {
                     "title": "Uptown Funk",
                     "artist": "Mark Ronson ft. Bruno Mars",
-                    "album": "Uptown Special"
+                    "duration": "4:30",
+                    "song_art": "https://picsum.photos/id/252/200/200"
                 },
                 {
                     "title": "Can't Stop the Feeling!",
                     "artist": "Justin Timberlake",
-                    "album": "Trolls (Original Motion Picture Soundtrack)"
+                    "duration": "3:56",
+                    "song_art": "https://picsum.photos/id/253/200/200"
+                },
+                {
+                    "title": "Happy",
+                    "artist": "Pharrell Williams",
+                    "duration": "3:53",
+                    "song_art": "https://picsum.photos/id/254/200/200"
                 }
             ]
         },
@@ -124,12 +172,20 @@
                 {
                     "title": "River Flows in You",
                     "artist": "Yiruma",
-                    "album": "First Love"
+                    "duration": "3:06",
+                    "song_art": "https://picsum.photos/id/255/200/200"
                 },
                 {
                     "title": "Comptine d'un autre été: L'après-midi",
                     "artist": "Yann Tiersen",
-                    "album": "Amélie"
+                    "duration": "2:20",
+                    "song_art": "https://picsum.photos/id/256/200/200"
+                },
+                {
+                    "title": "Clair de Lune",
+                    "artist": "Claude Debussy",
+                    "duration": "5:12",
+                    "song_art": "https://picsum.photos/id/257/200/200"
                 }
             ]
         },
@@ -143,12 +199,20 @@
                 {
                     "title": "Take Five",
                     "artist": "The Dave Brubeck Quartet",
-                    "album": "Time Out"
+                    "duration": "5:24",
+                    "song_art": "https://picsum.photos/id/258/200/200"
                 },
                 {
                     "title": "So What",
                     "artist": "Miles Davis",
-                    "album": "Kind of Blue"
+                    "duration": "9:22",
+                    "song_art": "https://picsum.photos/id/259/200/200"
+                },
+                {
+                    "title": "Blue in Green",
+                    "artist": "Miles Davis",
+                    "duration": "5:37",
+                    "song_art": "https://picsum.photos/id/260/200/220"
                 }
             ]
         }
